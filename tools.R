@@ -40,3 +40,25 @@ compute_log_return_matrix = function(df){
   
   return(log_return_df)
 }
+
+kendall_tau_correlation_matrix = function(df){
+  # Compute Kendall's Tau coefficient according to equation 3.3
+  n = nrow(df)
+  d = ncol(df)
+  res = matrix(0, ncol=d, nrow=d)
+  
+  for (j in 1:d){
+    for (k in 1:d){
+      tau = 0
+      for (iprime in 2:n){
+        for (i in 1:(iprime-1)){
+          tau <- tau + ( sign(df[i,j] - df[iprime,j]) * sign(df[i,k] - df[iprime,k]) )
+        }
+      }
+      tau = (2*tau) / (n * (n-1))
+      res[j, k] = sin( (pi/2) * tau)
+    }
+    message('Kendall\'s Tau Correlation Matrix: Processing ', j, ' of ', d)
+  }
+  return(res)
+}
