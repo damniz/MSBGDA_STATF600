@@ -1,4 +1,4 @@
-"Index" "ADSOpen" "ADSHigh" "ADSLow" "ADSClose" "ADSVolume" "ADSAdjusted"
+"Index" "Open" "High" "Low" "Close" "Volume" "Adjusted"
 "2012-01-31" 36.189999 36.23 35.68 36 1906100 36
 "2012-02-01" 36.330002 37.259998 36.049999 37 4175000 37
 "2012-02-02" 37 37.900002 36.779999 36.82 2776000 36.82

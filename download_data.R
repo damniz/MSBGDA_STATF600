@@ -22,7 +22,7 @@ for (i in 1:nrow(sp500)){
       auto.assign = FALSE
     )
     
-    names(data) = sub(".\\.", "", names(data))
+    names(data) = sub("^.*\\.", "", names(data))
     
     write.zoo(
       data,
@@ -36,8 +36,3 @@ for (i in 1:nrow(sp500)){
     }
   )
 }
-
-# temp1 = read.zoo(
-#   paste(data_dir, "/stocks/A.csv", sep=""),
-#   header = TRUE
-# )

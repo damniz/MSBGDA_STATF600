@@ -1,4 +1,4 @@
-"Index" "COOpen" "COHigh" "COLow" "COClose" "COVolume" "COAdjusted"
+"Index" "Open" "High" "Low" "Close" "Volume" "Adjusted"
 "2012-08-02" 1 1 1 1 60 1
 "2012-08-03" 1 1 1 1 1750 1
 "2012-08-06" NA NA NA NA NA NA
