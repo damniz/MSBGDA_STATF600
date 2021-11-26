@@ -22,7 +22,7 @@ load_data_from_csv_files = function(data_dir){
     )
     df[names[i]] = as.data.frame(data)
   }
-  
+  message("CSV files loaded into data frame.")
   return(df)
 }
 
@@ -38,6 +38,7 @@ compute_log_return_matrix = function(df){
   # Remove the first row as t-1 does not exist
   log_return_df = log_return_df[-1,]
   
+  message("Log-Return matrix computed.")
   return(log_return_df)
 }
 
@@ -49,6 +50,7 @@ kendall_tau_correlation_matrix = function(df){
   
   for (j in 1:d){
     for (k in 1:d){
+      message("Kendall's Tau - d: ", d, " - j: ", j, " - k: ", k)
       tau = 0
       for (iprime in 2:n){
         for (i in 1:(iprime-1)){
@@ -58,7 +60,7 @@ kendall_tau_correlation_matrix = function(df){
       tau = (2*tau) / (n * (n-1))
       res[j, k] = sin( (pi/2) * tau)
     }
-    message('Kendall\'s Tau Correlation Matrix: Processing ', j, ' of ', d)
+    # message('Kendall\'s Tau Correlation Matrix: Processing ', j, ' of ', d)
   }
   return(res)
 }

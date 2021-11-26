@@ -11,4 +11,4 @@ df = load_data_from_csv_files(data_dir)
 log_return_df = compute_log_return_matrix(df)
 
 # Compute the Kendall's Tau Correlation Matrix
-kendall_corr_matrix = kendall_tau_correlation_matrix(log_return_df)
+kendall = kendall_tau_correlation_matrix(log_return_df)
